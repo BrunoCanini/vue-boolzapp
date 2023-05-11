@@ -116,6 +116,7 @@ body{
     height: calc(100% - (75px + 75px));
     overflow-y: auto;
     border: 1px solid black;
+    background-image: url(./img/mine.jpg);
 }
 
 .container-boardMsn{
