@@ -131,13 +131,14 @@ body{
 
 .text-contact{
     flex-grow: 1;
+    padding: 1.1rem 0 0 0;
     height: 100%;
 }
 
 .time-contact{
     width: 50px;
     height: 100%;
-    border: 1px solid black;
+    padding: 0.5rem 0 0 0;
 }
 
 /* SOTTOCONTAINER DI B */
@@ -145,29 +146,41 @@ body{
 .container-mainChat{
     height: calc(100% - (75px + 75px));
     overflow-y: auto;
-    border: 1px solid black;
     background-image: url(./img/mine.jpg);
 }
 
 .container-boardMsn{
     height: 75px;
+    background-color: #eaeaea;
     display: flex;
     justify-content: space-around;
 }
 
 .emoticon{
     width: 100px;
-    border: 1px solid black;
 }
 
 .sendMessage{
     flex-grow: 1;
-    border: 1px solid black;
+    padding: 0.6rem 0;
 }
 
 .audio{
     width: 100px;
-    border: 1px solid black;
+}
+
+.msn{
+    max-width: 320px;
+    min-height: 55px;
+    border-radius: 0.5rem;
+}
+
+.sent{
+    background-color: white;
+}
+
+.received{
+    background-color: #d5f9ba;
 }
 
 /* UTILITY */
@@ -179,7 +192,7 @@ body{
 }
 
 .text-name{
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 
 .flex-centratura{
@@ -194,4 +207,12 @@ body{
     height: 100%;
     border-radius: 50%;
     background-color: white;
+}
+
+.textGrey{
+    color: rgba(128, 128, 128, 0.633);
+}
+
+.textSmall{
+    font-size: small;
 }
