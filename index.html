@@ -5,72 +5,93 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>vue-boolzapp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-<div id="app">
+    <div id="app">
 
-    <div class="container-xxl">
+        <div class="container-xxl">
 
-        <div class="container-xl-a">
+            <div class="container-xl-a">
 
-            <div class="container-io">
-                <div class="image-io"></div>
-                <div class="name-io"></div>
-                <div class="container-option">
-                    <div class="option"></div>
-                    <div class="option"></div>
-                    <div class="option"></div>
+                <div class="container-io">
+                    <div class="image-io">
+                        <img class="img-avatar" src="./img/avatar_io.jpg" alt="avatar_io">
+                    </div>
+                    <div class="name-io">
+                        <p class="text-name">Bruno</p>
+                    </div>
+                    <div class="container-option">
+                        <div class="option flex-centratura"><i class="fa-solid fa-spinner" style="color: #bdbdbd;"></i></div>
+                        <div class="option flex-centratura"><i class="fa-solid fa-message" style="color: #bdbdbd;"></i></div>
+                        <div class="option flex-centratura"><i class="fa-solid fa-ellipsis-vertical" style="color: #bdbdbd;"></i></div>
+                    </div>
+                </div>
+
+                <div class="container-notifications">
+                    <div class="img-notifications">
+                        <div class="radius flex-centratura">
+                            <i class="fa-solid fa-bell-slash" style="color: #8edafc;"></i>
+                        </div>
+                    </div>
+                    <div class="text-notifications">
+                        <P class="text-name">Ricevi notifiche di nuovi messaggi</P>
+                        <p class="decoration">Attiva notifiche desktop</p>
+                    </div>
+                </div>
+
+                <div class="container-search">
+                    <input type="search" placeholder="Cerca o inizia una nuova chat" class="mySearch">
+                </div>
+
+                <div class="container-chat">
+                    <div v-for="( contact , i) in contacts" class="chat">
+                        <div class="img-contact">
+                            <img :src="contact.avatar" class="img-avatar" alt="">
+                        </div>
+                        <div class="text-contact">
+                           <p>{{contact.name}}</p>
+                           <span>Ultimo messaggio inviato</span>
+                        </div>
+                        <div class="time-contact"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="container-xl-b">
+
+                <div class="container-io">
+                    <div class="image-io"></div>
+                    <div class="name-io"></div>
+                    <div class="container-option">
+                        <div class="option"></div>
+                        <div class="option"></div>
+                        <div class="option"></div>
+                    </div>
+                </div>
+
+                <div class="container-mainChat">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id officia temporibus quos, tempore neque quod maiores non laboriosam ipsum culpa cum incidunt eius impedit officiis sunt quidem magni laudantium quaerat?</p>
+                </div>
+
+                <div class="container-boardMsn">
+                    <div class="emoticon"></div>
+                    <div class="sendMessage"></div>
+                    <div class="audio"></div>
                 </div>
             </div>
 
-            <div class="container-notifications">
-                <div class="img-notifications"></div>
-                <div class="text-notifications"></div>
-            </div>
-
-            <div class="container-search">
-
-            </div>
-
-            <div class="container-chat">
-                <div v-for="contact in contacts" class="chat"></div>
-
-            </div>
-
-        </div>
-
-        <div class="container-xl-b">
-
-            <div class="container-io">
-                <div class="image-io"></div>
-                <div class="name-io"></div>
-                <div class="container-option">
-                    <div class="option"></div>
-                    <div class="option"></div>
-                    <div class="option"></div>
-                </div>
-            </div>
-
-            <div class="container-mainChat">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id officia temporibus quos, tempore neque quod maiores non laboriosam ipsum culpa cum incidunt eius impedit officiis sunt quidem magni laudantium quaerat?</p>
-            </div>
-
-            <div class="container-boardMsn">
-                <div class="emoticon"></div>
-                <div class="sendMessage"></div>
-                <div class="audio"></div>
-            </div>
         </div>
 
     </div>
-
-</div>
     
 
 
-
+    <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
     <script src="./main.js"></script>
 </body>
 </html>
