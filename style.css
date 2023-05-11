@@ -6,11 +6,11 @@
 
 body{
     font-family: sans-serif;
-    background-color: #dbdbd1;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: no-repeat linear-gradient(#009688 20%, #d2dbdb 20% 80%);
 }
 
 /* CONTAINER GENERALE */
@@ -96,6 +96,7 @@ body{
     height: 50px;
     background-color: white;
     padding: 0.3rem;
+    display: flex;
 }
 
 .decoration{
@@ -106,6 +107,7 @@ body{
 .mySearch{
     width: 100%;
     height: 100%;
+    border: none;
 }
 
 /* SEZIONE CHAT */
@@ -114,6 +116,13 @@ body{
     height: calc(100% - (50px + 85px + 75px));
     overflow-y: auto;
     background-color: white;
+}
+
+.searchFontPic{
+    width: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .chat{
@@ -147,6 +156,10 @@ body{
     height: calc(100% - (75px + 75px));
     overflow-y: auto;
     background-image: url(./img/mine.jpg);
+    padding: 3rem 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .container-boardMsn{
@@ -170,17 +183,20 @@ body{
 }
 
 .msn{
-    max-width: 320px;
+    min-width: 320px;
     min-height: 55px;
     border-radius: 0.5rem;
+    padding: 1.2rem;
 }
 
 .sent{
     background-color: white;
+    align-self: flex-start;
 }
 
 .received{
     background-color: #d5f9ba;
+    align-self: flex-end;
 }
 
 /* UTILITY */
