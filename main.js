@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
       return {
+        newMessage2 : "ok",
         activeContact : "",
         newMessage : "",
         contacts: [
@@ -195,6 +196,16 @@ createApp({
             }
             this.activeContact.messages.push(newMessage);
             this.newMessage = "";
+        },
+
+        messageAnswer(){
+            setTimeout(() => {
+                let newMessage2 = {
+                    message : this.newMessage2,
+                    status : "received",
+                }
+                this.activeContact.messages.push(newMessage2);
+            }, "1000");
         }
       },
     mounted() {

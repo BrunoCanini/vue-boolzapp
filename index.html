@@ -93,7 +93,7 @@
                     <div class="emoticon flex-centratura">
                         <i class="fa-regular fa-face-smile" style="color: #919191;"></i>                    </div>
                     <div class="sendMessage">
-                        <input type="text" v-model="newMessage" @keyUp.enter="addMessage()" placeholder="Scrivi un messaggio" class="mySearch">
+                        <input type="text" v-model="newMessage" @keyUp.enter="addMessage(), messageAnswer() " placeholder="Scrivi un messaggio" class="mySearch">
                     </div>
                     <div class="audio flex-centratura">
                         <i class="fa-solid fa-microphone" style="color: #919191;"></i>
