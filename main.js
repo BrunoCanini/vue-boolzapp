@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
       return {
+        activeContact : "",
         contacts: [
         {
             name: 'Michele',
@@ -170,7 +171,21 @@ createApp({
       }
     },
     methods: {
+        contactActive(i){
+            this.activeContact = this.contacts[i]
+            // console.log(this.activeContact.name)
+        },
 
+        sentRiceived(i){
+            // console.log(this.activeContact.messages[i].status)
+            let valor = "";
+            if(this.activeContact.messages[i].status == "received"){
+                valor = "received"
+            }else{
+                valor = "sent"
+            }
+            return valor
+        }
       },
     mounted() {
 

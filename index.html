@@ -50,7 +50,7 @@
                 </div>
 
                 <div class="container-chat">
-                    <div v-for="( contact , i) in contacts" class="chat">
+                    <div v-for="( contact , i) in contacts" class="chat" @click="contactActive(i)">
                         <div class="img-contact">
                             <img :src="contact.avatar" class="img-avatar" alt="">
                         </div>
@@ -71,9 +71,10 @@
 
                 <div class="container-io">
                     <div class="image-io">
+                        <img :src="activeContact.avatar" class="img-avatar" alt="">
                     </div>
                     <div class="name-io">
-
+                        <p class="text-name">{{activeContact.name}}</p>
                     </div>
                     <div class="container-option">
                         <div class="option flex-centratura"><i class="fa-solid fa-magnifying-glass" style="color: #bdbdbd;"></i></div>
@@ -83,10 +84,13 @@
                 </div>
 
                 <div class="container-mainChat">
-                    <div class="msn sent">ciao come stai?</div>
+                    <div v-for="(mes, i) in activeContact.messages" class="msn" :class="sentRiceived(i)">
+                        <p>{{mes.message}}</p>
+                    </div>
+                    <!-- <div class="msn sent">ciao come stai?</div>
                     <div class="msn received">tutto bene dai, te?</div>
                     <div class="msn sent">non ci lamentiamo</div>
-                    <div class="msn received">alla grande!</div>
+                    <div class="msn received"><p>alla grande!</p></div> -->
                 </div>
 
                 <div class="container-boardMsn">

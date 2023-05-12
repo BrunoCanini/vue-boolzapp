@@ -183,10 +183,12 @@ body{
 }
 
 .msn{
-    min-width: 320px;
+    min-width: 310px;
+    max-width: 320px;
     min-height: 55px;
     border-radius: 0.5rem;
     padding: 1.2rem;
+    margin: 1.5rem 0;
 }
 
 .sent{
