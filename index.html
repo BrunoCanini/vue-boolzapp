@@ -38,7 +38,7 @@
                     </div>
                     <div class="text-notifications">
                         <P class="text-name">Ricevi notifiche di nuovi messaggi</P>
-                        <p class="decoration">Attiva notifiche desktop</p>
+                        <a href="">Attiva notifiche desktop</a>
                     </div>
                 </div>
 
@@ -87,17 +87,13 @@
                     <div v-for="(mes, i) in activeContact.messages" class="msn" :class="sentRiceived(i)">
                         <p>{{mes.message}}</p>
                     </div>
-                    <!-- <div class="msn sent">ciao come stai?</div>
-                    <div class="msn received">tutto bene dai, te?</div>
-                    <div class="msn sent">non ci lamentiamo</div>
-                    <div class="msn received"><p>alla grande!</p></div> -->
                 </div>
 
                 <div class="container-boardMsn">
                     <div class="emoticon flex-centratura">
                         <i class="fa-regular fa-face-smile" style="color: #919191;"></i>                    </div>
                     <div class="sendMessage">
-                        <input type="text" placeholder="Scrivi un messaggio" class="mySearch">
+                        <input type="text" v-model="newMessage" @keyUp.enter="addMessage()" placeholder="Scrivi un messaggio" class="mySearch">
                     </div>
                     <div class="audio flex-centratura">
                         <i class="fa-solid fa-microphone" style="color: #919191;"></i>

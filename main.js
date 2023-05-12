@@ -4,6 +4,7 @@ createApp({
     data() {
       return {
         activeContact : "",
+        newMessage : "",
         contacts: [
         {
             name: 'Michele',
@@ -185,6 +186,15 @@ createApp({
                 valor = "sent"
             }
             return valor
+        },
+
+        addMessage(){
+            let newMessage = {
+                message : this.newMessage,
+                status : "sent",
+            }
+            this.messages.push(newMessage);
+            this.newMessage = "";
         }
       },
     mounted() {
