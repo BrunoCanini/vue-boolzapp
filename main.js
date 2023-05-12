@@ -193,7 +193,7 @@ createApp({
                 message : this.newMessage,
                 status : "sent",
             }
-            this.messages.push(newMessage);
+            this.activeContact.messages.push(newMessage);
             this.newMessage = "";
         }
       },
