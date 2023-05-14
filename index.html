@@ -46,20 +46,20 @@
                     <div class="searchFontPic">
                         <i class="fa-solid fa-magnifying-glass" style="color: #bdbdbd;"></i>
                     </div>
-                    <input type="search" placeholder="Cerca o inizia una nuova chat" class="mySearch">
+                    <input type="search" placeholder="Cerca o inizia una nuova chat" v-model="searchContact" class="mySearch">
                 </div>
 
                 <div class="container-chat">
-                    <div v-for="( contact , i) in contacts" class="chat" @click="contactActive(i)">
+                    <div v-for="contact in filterContacts" class="chat" @click="contactActive(contact)">
                         <div class="img-contact">
                             <img :src="contact.avatar" class="img-avatar" alt="">
                         </div>
                         <div class="text-contact">
                            <p class="text-name">{{contact.name}}</p>
-                           <span class="textGrey">Ultimo messaggio inviato</span>
+                           <span class="textGrey">{{contact.messages[contact.messages.length-1].message}}</span>
                         </div>
                         <div class="time-contact">
-                            <span class="textGrey textSmall">12:00</span>
+                            <span class="textGrey textSmall">{{contact.messages[contact.messages.length-1].date}}</span>
                         </div>
                     </div>
 
@@ -84,7 +84,7 @@
                 </div>
 
                 <div class="container-mainChat">
-                    <div v-for="(mes, i) in activeContact.messages" class="msn" :class="sentRiceived(i)">
+                    <div v-for="mes in activeContact.messages" class="msn" :class="sentRiceived(mes)">
                         <p>{{mes.message}}</p>
                     </div>
                 </div>
@@ -108,6 +108,7 @@
 
 
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.7/dayjs.min.js"></script>
     <script src="./main.js"></script>
 </body>
 </html>

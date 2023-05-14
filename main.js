@@ -6,6 +6,7 @@ createApp({
         newMessage2 : "Ok!",
         activeContact : "",
         newMessage : "",
+        searchContact : "",
         contacts: [
         {
             name: 'Michele',
@@ -173,15 +174,13 @@ createApp({
       }
     },
     methods: {
-        contactActive(i){
-            this.activeContact = this.contacts[i]
-            // console.log(this.activeContact.name)
+        contactActive(contact){
+            this.activeContact = contact;
         },
 
-        sentRiceived(i){
-            // console.log(this.activeContact.messages[i].status)
+        sentRiceived(mes){
             let valor = "";
-            if(this.activeContact.messages[i].status == "received"){
+            if(mes.status == "received"){
                 valor = "received"
             }else{
                 valor = "sent"
@@ -193,6 +192,7 @@ createApp({
             let newMessage = {
                 message : this.newMessage,
                 status : "sent",
+                date : new dayjs().format("DD/MM/YYYY HH:mm:ss"),
             }
             this.activeContact.messages.push(newMessage);
             this.newMessage = "";
@@ -203,12 +203,22 @@ createApp({
                 let newMessage2 = {
                     message : this.newMessage2,
                     status : "received",
+                    date : new dayjs().format("DD/MM/YYYY HH:mm:ss"),
                 }
                 this.activeContact.messages.push(newMessage2);
             }, "1000");
-        }
+        },
+
       },
     mounted() {
 
-      }
+      },
+
+    computed : {
+        filterContacts(){
+            return this.contacts.filter((contact)=>{
+               return contact.name.startsWith(this.searchContact)
+            });
+        }
+    }
   }).mount('#app')
