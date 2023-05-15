@@ -141,9 +141,9 @@ body{
 }
 
 .time-contact{
-    width: 50px;
+    width: 80px;
     height: 100%;
-    padding: 0.5rem 0 0 0;
+    padding: 0.5rem;
 }
 
 /* SOTTOCONTAINER DI B */
@@ -184,6 +184,15 @@ body{
     border-radius: 0.5rem;
     padding: 1.2rem;
     margin: 1.5rem 0;
+    position: relative;
+}
+
+.delete{
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .sent{

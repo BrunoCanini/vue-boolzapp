@@ -209,6 +209,11 @@ createApp({
             }, "1000");
         },
 
+        deleteMessage(mes){
+            console.log(mes)
+            
+        }
+
       },
     mounted() {
 
