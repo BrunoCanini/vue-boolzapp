@@ -74,7 +74,8 @@
                         <img :src="activeContact.avatar" class="img-avatar" alt="">
                     </div>
                     <div class="name-io">
-                        <p class="text-name">{{activeContact.name}}</p>
+                        <p  v-if="activeContact" class="text-name">{{activeContact.name}}</p>
+                        <p  v-if="activeContact" class="textGrey"> Ultimo accesso il: {{activeContact.messages[activeContact.messages.length-1].date}} </p>
                     </div>
                     <div class="container-option">
                         <div class="option flex-centratura"><i class="fa-solid fa-magnifying-glass" style="color: #bdbdbd;"></i></div>
