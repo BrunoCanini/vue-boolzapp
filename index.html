@@ -85,9 +85,9 @@
                 </div>
 
                 <div class="container-mainChat">
-                    <div v-for="mes in activeContact.messages" class="msn" :class="sentRiceived(mes)">
+                    <div v-for="(mes, i) in activeContact.messages" class="msn" :class="sentRiceived(mes)">
                         <p>{{mes.message}}</p>
-                        <button @click="deleteMessage(mes)" class="delete">^</button>
+                        <button @click="deleteMessage(i)" class="delete">^</button>
                     </div>
                 </div>
 

@@ -209,8 +209,8 @@ createApp({
             }, "1000");
         },
 
-        deleteMessage(mes){
-            console.log(mes)
+        deleteMessage(i){
+            console.log(i)
             
         }
 
